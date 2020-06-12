@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Angular.UI.Bootstrap" Version="2.5.0" />
+    <PackageReference Include="angularjs" Version="1.7.8.1" />
+    <PackageReference Include="bootstrap" Version="4.5.0" />
+    <PackageReference Include="Bootstrap.Less" Version="3.4.1" />
+  </ItemGroup>
+
+</Project>

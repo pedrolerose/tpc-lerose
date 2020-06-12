@@ -1,0 +1,86 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Dominio/1.0.0": {
+        "dependencies": {
+          "Angular.UI.Bootstrap": "2.5.0",
+          "bootstrap.less": "3.4.1",
+          "angularjs": "1.7.8.1",
+          "bootstrap": "4.5.0"
+        },
+        "runtime": {
+          "Dominio.dll": {}
+        }
+      },
+      "Angular.UI.Bootstrap/2.5.0": {},
+      "angularjs/1.7.8.1": {},
+      "bootstrap/4.5.0": {
+        "dependencies": {
+          "jQuery": "3.0.0",
+          "popper.js": "1.16.0"
+        }
+      },
+      "bootstrap.less/3.4.1": {
+        "dependencies": {
+          "jQuery": "3.0.0"
+        }
+      },
+      "jQuery/3.0.0": {},
+      "popper.js/1.16.0": {}
+    }
+  },
+  "libraries": {
+    "Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Angular.UI.Bootstrap/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-402jIttam/Zawp6FjzsZmzKinfw9ivuEjRafWf6B43pfaDrd0/5K0TOpFnFh9dfhX5wUKr7R44wSfLe2ZEXbow==",
+      "path": "angular.ui.bootstrap/2.5.0",
+      "hashPath": "angular.ui.bootstrap.2.5.0.nupkg.sha512"
+    },
+    "angularjs/1.7.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TUoD6xM6PyPlhFTZLpEel4l0tM2j5Ata4IRdMumg2d4nVMEfRQ3BTZBzi4SqG4nsd2yUj9djIo2nywpVEkSzDw==",
+      "path": "angularjs/1.7.8.1",
+      "hashPath": "angularjs.1.7.8.1.nupkg.sha512"
+    },
+    "bootstrap/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k0Z6NMeEg8dvQD3IprG8V0Q/szV3OBgfGT2EyKUG0Ae6U6GrYaKvQacLJMCfI/0m5DRX6JfZG6aFNz8mFrY/tw==",
+      "path": "bootstrap/4.5.0",
+      "hashPath": "bootstrap.4.5.0.nupkg.sha512"
+    },
+    "bootstrap.less/3.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G/laxBbHVHq4G7LCbfRLISrJf8wjaMsx7qpEDzAorUr+jbl66xP5Pd7IPmqAIi5u8six7/ETv9M4nU7amvbN7g==",
+      "path": "bootstrap.less/3.4.1",
+      "hashPath": "bootstrap.less.3.4.1.nupkg.sha512"
+    },
+    "jQuery/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xFfntV19HzCtKdJWOp/XT9PUY3SslokTDDLFJZdBug36j1XVhw1+vPQ/n7Gd5y+jdpesn5B1m1yn1qIUq57jlA==",
+      "path": "jquery/3.0.0",
+      "hashPath": "jquery.3.0.0.nupkg.sha512"
+    },
+    "popper.js/1.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZJhaIouJ7dztoRoqj+KA1ADGpEIr+MzCWOkKm/Q6tu3CAauSsc+ZzXsxsD6RClRwieacqE3QNYNpaLU/mkVnWg==",
+      "path": "popper.js/1.16.0",
+      "hashPath": "popper.js.1.16.0.nupkg.sha512"
+    }
+  }
+}

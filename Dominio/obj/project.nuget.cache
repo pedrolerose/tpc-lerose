@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "6tq/9knEdFW6/1o5jmAzXS83qG0JTVZ8C2EcvjZK7yxAiA89fBnmLAtotTd+BL4Y8g6FB2KaQR04FCRMry+CXQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tape\\Desktop\\Pe\\2do Año\\1er Cuatrimestre\\Programacion 3\\TPC\\Dominio\\Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tape\\.nuget\\packages\\angular.ui.bootstrap\\2.5.0\\angular.ui.bootstrap.2.5.0.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\angularjs\\1.7.8.1\\angularjs.1.7.8.1.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\bootstrap\\4.5.0\\bootstrap.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\bootstrap.less\\3.4.1\\bootstrap.less.3.4.1.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\popper.js\\1.16.0\\popper.js.1.16.0.nupkg.sha512",
+    "C:\\Users\\Tape\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

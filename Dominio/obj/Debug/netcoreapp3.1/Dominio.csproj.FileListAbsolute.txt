@@ -1,0 +1,5 @@
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Dominio\bin\Debug\netcoreapp3.1\Dominio.deps.json
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Dominio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Dominio\obj\Debug\netcoreapp3.1\Dominio.csprojAssemblyReference.cache
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
