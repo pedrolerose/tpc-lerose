@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [LEROSE_DB]    Script Date: 14/6/2020 14:30:12 ******/
+/****** Object:  Database [LEROSE_DB]    Script Date: 14/6/2020 18:23:59 ******/
 CREATE DATABASE [LEROSE_DB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -109,4 +109,5 @@ GO
 
 ALTER DATABASE [LEROSE_DB] SET  READ_WRITE 
 GO
+
 

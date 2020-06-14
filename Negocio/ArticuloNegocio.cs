@@ -21,7 +21,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT a.Id, a.Codigo AS Codigo, a.Nombre AS Nombre, a.Descripcion AS Descripcion, m.Descripcion AS MarcaDescripcion, c.Descripcion AS CategoriaDescripcion,a.IdMarca AS IdMarca, a.IdCategoria AS IdCategoria,a.ImagenUrl AS Imagen, a.Precio AS Precio FROM ARTICULOS a LEFT JOIN MARCAS m ON m.Id = a.IdMarca LEFT JOIN CATEGORIAS c ON c.Id = a.IdCategoria";
+                comando.CommandText = "SELECT a.Id, a.Codigo AS Codigo, a.Nombre AS Nombre, a.Descripcion AS Descripcion, m.Descripcion AS MarcaDescripcion, c.Descripcion AS CategoriaDescripcion,a.Id_Marca AS IdMarca, a.Id_Categoria AS IdCategoria,a.Imagen AS Imagen, a.Precio AS Precio FROM Articulos a LEFT JOIN Marcas m ON m.Id = a.Id_Marca LEFT JOIN Categorias c ON c.Id = a.Id_Categoria";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -65,7 +65,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "INSERT INTO ARTICULOS VALUES (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagen, @precio)";
+                comando.CommandText = "INSERT INTO Articulos VALUES (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagen, @precio)";
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@codigo", articulo.Codigo);
                 comando.Parameters.AddWithValue("@nombre", articulo.Nombre);
@@ -93,7 +93,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @imagen, Precio = @precio WHERE Id = @id";
+                comando.CommandText = "UPDATE Articulos set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Id_Marca = @idMarca, Id_Categoria = @idCategoria, Imagen = @imagen, Precio = @precio WHERE Id = @id";
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@codigo", articulo.Codigo);
                 comando.Parameters.AddWithValue("@nombre", articulo.Nombre);
@@ -121,7 +121,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "DELETE from ARTICULOS where id =" + id;
+                comando.CommandText = "UPDATE Articulos SET BorradoLogico = 0 WHERE Id =" + id;
 
                 comando.Connection = conexion;
                 conexion.Open();
