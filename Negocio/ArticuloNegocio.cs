@@ -19,7 +19,7 @@ namespace Negocio
             SqlDataReader lector;
             try
             {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi;";
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT a.Id, a.Codigo AS Codigo, a.Nombre AS Nombre, a.Descripcion AS Descripcion, m.Descripcion AS MarcaDescripcion, c.Descripcion AS CategoriaDescripcion,a.IdMarca AS IdMarca, a.IdCategoria AS IdCategoria,a.ImagenUrl AS Imagen, a.Precio AS Precio FROM ARTICULOS a LEFT JOIN MARCAS m ON m.Id = a.IdMarca LEFT JOIN CATEGORIAS c ON c.Id = a.IdCategoria";
                 comando.Connection = conexion;
@@ -63,7 +63,7 @@ namespace Negocio
 
             try
             {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi;";
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "INSERT INTO ARTICULOS VALUES (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagen, @precio)";
                 comando.Parameters.Clear();
@@ -91,7 +91,7 @@ namespace Negocio
 
             try
             {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi;";
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "UPDATE ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @imagen, Precio = @precio WHERE Id = @id";
                 comando.Parameters.Clear();
@@ -119,7 +119,7 @@ namespace Negocio
             SqlConnection conexion = new SqlConnection();
             try
             {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi;";
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "DELETE from ARTICULOS where id =" + id;
 

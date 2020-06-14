@@ -1,5 +1,3 @@
-C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.csprojAssemblyReference.cache
-C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\Web.dll.config
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\Web.dll
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\Web.pdb
@@ -75,6 +73,8 @@ C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\Mi
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.csprojAssemblyReference.cache
+C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.csproj.CopyComplete
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.dll
 C:\Users\Tape\Desktop\Pe\2do Año\1er Cuatrimestre\Programacion 3\TPC\Web\obj\Debug\Web.pdb

@@ -19,7 +19,7 @@ namespace Negocio
             SqlDataReader lector;
             try
             {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi;";
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT Id, Descripcion FROM MARCAS";
                 comando.Connection = conexion;

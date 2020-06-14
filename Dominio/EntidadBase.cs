@@ -4,10 +4,7 @@ namespace Dominio
 {
     public abstract class EntidadBase<TipoId>
     {
-        [NonSerialized()]
-        protected string _codigoHash;
-        protected bool _activo = true;
-
+        
         [NonSerialized()]
         private bool _borradoLogico;
 
