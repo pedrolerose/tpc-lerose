@@ -10,21 +10,21 @@
         <table class="table" style="margin-left: 30px; margin-right: 10px; width: 70%;">
 
             <tr>
-                <td class="text-white">Vista Previa</td>
-                <td class="text-white">Nombre</td>
-                <td class="text-white">Precio</td>
-                <td class="text-white">Cantidad</td>
+                <td class="text-dark">Vista Previa</td>
+                <td class="text-dark">Nombre</td>
+                <td class="text-dark">Precio</td>
+                <td class="text-dark">Cantidad</td>
                 <td style="width: 30%;">
-                    <label class="text-white" style="margin-left: 40px;">Acciones</label></td>
+                    <label class="text-dark" style="margin-left: 40px;">Acciones</label></td>
             </tr>
             <% foreach (var item in carritoFront)
                 { %>
             <tr>
                 <td>
                     <img src="<% = item.Imagen %>" style="max-height: 50px; max-width: 50px;"></td>
-                <td class="text-white"><% = item.Nombre %></td>
-                <td class="text-white">$ <% = decimal.Round(item.Precio, 2, MidpointRounding.AwayFromZero) %></td>
-                <td class="text-white"><% = ContarCant(item) %></td>
+                <td class="text-dark"><% = item.Nombre %></td>
+                <td class="text-dark">$ <% = decimal.Round(item.Precio, 2, MidpointRounding.AwayFromZero) %></td>
+                <td class="text-dark"><% = ContarCant(item) %></td>
                 <td>
                     <a href="Detalle.aspx?idart=<% = item.Id.ToString() %>" class="btn btn-primary">Detalle</a>
 
@@ -55,7 +55,7 @@
         </table>
     </div>
     <div class="row" style="justify-content: center;">
-        <h5 class="text-white">Total: $ <% = decimal.Round(total, 2, MidpointRounding.AwayFromZero) %></h5>
+        <h5 class="text-dark">Total: $ <% = decimal.Round(total, 2, MidpointRounding.AwayFromZero) %></h5>
     </div>
 
     <div class="row" style="justify-content: center;">

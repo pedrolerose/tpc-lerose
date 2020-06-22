@@ -9,9 +9,8 @@
             <div class="card-body" style="margin-left: 20px; justify-content: center">
                 <address>
                     Center Pepe Sa<br />
-                    Calle False 123, BA 98052-6399<br />
-                    <abbr title="Telefono">Telefono:</abbr>
-                    425.555.0100 (lineas rotativas / osea no te atendemos)
+                    Calle Falsa 123, BA 98052-6399<br />
+                    Telefono: 425.555.0100 (lineas rotativas / osea no te atendemos)
                 </address>
                 <address>
                     <strong>Soporte:</strong>   <a href="mailto:Soporte@mentira.com">Soporte@mentira.com</a><br />

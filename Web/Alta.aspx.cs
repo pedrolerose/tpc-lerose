@@ -18,11 +18,12 @@ namespace Web
         public List<Marca> marcas { get; set; }
         public bool flagVacios { get; set; }
         public bool flagCampos { get; set; }
+        public string leyenda { get; set; }
         public List<Articulo> listaArticulos { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            leyenda = "Agregar";
             try
             {
                 CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
@@ -44,19 +45,24 @@ namespace Web
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 listaArticulos = negocio.Listar();
 
-                var ItemModificar = Request.QueryString["idModificar"];
-                if (ItemModificar != null)
+                if (!IsPostBack)
                 {
-                    Articulo articulo = listaArticulos.Find(a => a.Id == int.Parse(ItemModificar));
+                    var ItemModificar = Request.QueryString["idModificar"];
+                    if (ItemModificar != null)
+                    {
+                        leyenda = "Modificar";
+                        Articulo articulo = listaArticulos.Find(a => a.Id == int.Parse(ItemModificar));
 
-                    codigo.Text = articulo.Codigo;
-                    nombre.Text = articulo.Nombre;
-                    descripcion.Text = articulo.Descripcion;
-                    precio.Text = articulo.Precio.ToString();
-                    imagen.Text = articulo.Imagen;
-                    DropCategoria.SelectedValue = articulo.Categoria.Id.ToString();
-                    DropMarca.SelectedValue = articulo.Marca.Id.ToString();
+                        codigo.Text = articulo.Codigo;
+                        nombre.Text = articulo.Nombre;
+                        descripcion.Text = articulo.Descripcion;
+                        precio.Text = articulo.Precio.ToString();
+                        imagen.Text = articulo.Imagen;
+                        DropCategoria.SelectedValue = articulo.Categoria.Id.ToString();
+                        DropMarca.SelectedValue = articulo.Marca.Id.ToString();
+                    }
                 }
+                
 
             }
             catch (Exception ex)
@@ -136,7 +142,6 @@ namespace Web
                 else
                 { negocio.Agregar(articulo); }
 
-                Response.Redirect("~/ Alta.aspx");
             }
             catch (Exception ex)
             {
@@ -147,6 +152,7 @@ namespace Web
 
         public void Agregar()
         {
+            if (!IsPostBack) return;
             if (ValidarVacios())
             {
                 flagVacios = false;
@@ -156,6 +162,7 @@ namespace Web
 
                     flagCampos = false;
                     AgregarArticulo();
+                    Response.Redirect("~/Alta.aspx");
                 }
                 else
                 {
