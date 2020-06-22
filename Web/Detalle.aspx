@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 style="margin-left:50px;margin-top:20px;">Detalle</h1>
+    <h1 class="text-white" style="margin-left:50px;margin-top:20px;">Detalle</h1>
     <div class="row" style="margin-bottom:50px;margin-top:50px; justify-content: center">
         <div class="card col-md-4" style="width: 25%;" >
             <div class="card-body" style="margin-left: 50px;">

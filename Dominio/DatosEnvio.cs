@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dominio
 {
-    public class DatosEnvio : EntidadBase<long>
+    public class DatosEnvio : EntidadBase<int>
     {
         public virtual string Nombre { get; set; }
         public virtual long NumeroDocumento { get; set; }

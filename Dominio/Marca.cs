@@ -2,7 +2,7 @@
 
 namespace Dominio
 {
-    public class Marca : EntidadBase<long>
+    public class Marca : EntidadBase<int>
     {
         public Marca() { }
         public Marca(int id, string desc)

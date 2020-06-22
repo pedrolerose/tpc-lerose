@@ -2,7 +2,7 @@
 
 namespace Dominio
 {
-    public class Categoria : EntidadBase<long>
+    public class Categoria : EntidadBase<int>
     {
         public Categoria() { }
         public Categoria(int id, string desc)

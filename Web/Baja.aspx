@@ -1,0 +1,46 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Baja.aspx.cs" Inherits="Web.Baja" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <h1 class="text-white" style="margin-left: 50px; margin-top: 20px;">Eliminar/Modificar Articulos</h1>
+
+    <div class="row" style="margin-bottom: 50px; margin-top: 50px; justify-content: center;">
+        <table class="table" style="margin-left: 30px; margin-right: 10px; width: 70%;">
+
+            <tr>
+                <td class="text-white">Vista Previa</td>
+                <td class="text-white">Nombre</td>
+                <td class="text-white">Precio</td>
+                <td style="width: 30%;">
+                    <label class="text-white" style="margin-left: 40px;">Acciones</label>
+                </td>
+            </tr>
+            <% foreach (var item in listaArticulos)
+                { %>
+            <tr>
+                <td>
+                    <img src="<% = item.Imagen %>" style="max-height: 50px; max-width: 50px;">
+                </td>
+                <td class="text-white">
+                    <% = item.Nombre %>
+                </td>
+                <td class="text-white">
+                    $ <% = decimal.Round(item.Precio, 2, MidpointRounding.AwayFromZero) %></td>
+                <td>
+                    <a href="Baja.aspx?idModificar=<% = item.Id.ToString() %>" class="btn btn-primary">
+                        Modificar
+                    </a>
+                    <a href="Baja.aspx?idBorrar=<% = item.Id %>" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+
+
+</asp:Content>

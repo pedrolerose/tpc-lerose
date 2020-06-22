@@ -20,7 +20,8 @@ namespace Dominio
         {
             BorradoLogico = false;
             Fecha = DateTime.Now;
-           // this.Usuario = AplicacionContexto.getUserContext() as Usuario;
+            this.Usuario = new Usuario();
+            this.Usuario.Id = 1;
         }
 
         protected TipoId _id;

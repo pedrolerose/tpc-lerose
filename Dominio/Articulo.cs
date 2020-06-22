@@ -2,7 +2,7 @@
 
 namespace Dominio
 {
-    public class Articulo : EntidadBase<long>
+    public class Articulo : EntidadBase<int>
     {
         public string Codigo { get; set; }
         public string Nombre { get; set; }
