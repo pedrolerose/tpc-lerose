@@ -28,8 +28,14 @@
             <li class="nav-item dropdown">
                 <a class="nav-link text-blue dropdown-toggle" title="Admin" role="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="Alta.aspx">Alta</a>
-                    <a class="dropdown-item" href="Baja.aspx">Baja/Modificacion</a>
+                    <a class="dropdown-item" href="AltaArticulo.aspx">Alta Articulo</a>
+                    <a class="dropdown-item" href="BajaArticulo.aspx">Baja/Modificacion Articulo</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="AltaMarca.aspx">Alta Marca</a>
+                    <a class="dropdown-item" href="BajaMarca.aspx">Baja/Modificacion Marca</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="AltaCategoria.aspx">Alta Categoria</a>
+                    <a class="dropdown-item" href="BajaCategoria.aspx">Baja/Modificacion Categoria</a>
                 </div>
             </li>
         </ul>

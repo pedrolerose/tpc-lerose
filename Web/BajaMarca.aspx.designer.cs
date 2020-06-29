@@ -11,7 +11,7 @@ namespace Web
 {
 
 
-    public partial class Baja
+    public partial class BajaMarca
     {
     }
 }

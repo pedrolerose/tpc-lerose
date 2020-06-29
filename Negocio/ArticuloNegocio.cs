@@ -64,8 +64,10 @@ namespace Negocio
             try
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "INSERT INTO Articulos VALUES (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagen, @precio, @fecha, @usuario, @borrado)";
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "AltaArticulo";
+                comando.Connection = conexion;
+                
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@codigo", articulo.Codigo);
                 comando.Parameters.AddWithValue("@nombre", articulo.Nombre);
@@ -78,9 +80,9 @@ namespace Negocio
                 comando.Parameters.AddWithValue("@usuario", articulo.Usuario.Id);
                 comando.Parameters.AddWithValue("@borrado", articulo.BorradoLogico);
 
-                comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
+                conexion.Close();
             }
             catch (Exception ex)
             {
@@ -95,8 +97,10 @@ namespace Negocio
             try
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE Articulos set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Id_Marca = @idMarca, Id_Categoria = @idCategoria, Imagen = @imagen, Precio = @precio WHERE Id = @id";
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "ModificarArticulo";
+                comando.Connection = conexion;
+                
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@codigo", articulo.Codigo);
                 comando.Parameters.AddWithValue("@nombre", articulo.Nombre);
@@ -107,9 +111,9 @@ namespace Negocio
                 comando.Parameters.AddWithValue("@precio", articulo.Precio);
                 comando.Parameters.AddWithValue("@id", articulo.Id);
 
-                comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
+                conexion.Close();
             }
             catch (Exception ex)
             {
@@ -123,12 +127,16 @@ namespace Negocio
             try
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE Articulos SET BorradoLogico = 1 WHERE Id =" + id;
-
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "BajaArticulo";
                 comando.Connection = conexion;
+
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@id", id);
+
                 conexion.Open();
                 comando.ExecuteNonQuery();
+                conexion.Close();
             }
             catch (Exception ex)
             {

@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class Alta : System.Web.UI.Page
+    public partial class AltaArticulo : System.Web.UI.Page
     {
         public Articulo articulo { get; set; }
         public List<Categoria> categorias { get; set; }
@@ -162,7 +162,7 @@ namespace Web
 
                     flagCampos = false;
                     AgregarArticulo();
-                    Response.Redirect("~/Alta.aspx");
+                    Response.Redirect("~/AltaArticulo.aspx");
                 }
                 else
                 {

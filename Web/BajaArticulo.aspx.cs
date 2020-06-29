@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class Baja : System.Web.UI.Page
+    public partial class BajaArticulo : System.Web.UI.Page
     {
         public List<Articulo> listaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -24,14 +24,14 @@ namespace Web
                 {
                     Articulo articulo = listaArticulos.Find(a => a.Id == int.Parse(ItemBorrar));
                     negocio.Eliminar(articulo.Id);
-                    Response.Redirect("~/Baja.aspx");
+                    Response.Redirect("~/BajaArticulo.aspx");
                 }
 
                 var ItemModificar = Request.QueryString["idModificar"];
                 if (ItemModificar != null)
                 {
                     Articulo articulo = listaArticulos.Find(a => a.Id == int.Parse(ItemModificar));
-                    Response.Redirect("~/Alta.aspx?idModificar="+ articulo.Id);
+                    Response.Redirect("~/AltaArticulo.aspx?idModificar="+ articulo.Id);
                 }
 
             }

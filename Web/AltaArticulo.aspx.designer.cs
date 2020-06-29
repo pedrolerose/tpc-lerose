@@ -11,7 +11,7 @@ namespace Web
 {
 
 
-    public partial class Alta
+    public partial class AltaArticulo
     {
 
         /// <summary>

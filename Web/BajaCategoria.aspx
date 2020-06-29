@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Baja.aspx.cs" Inherits="Web.Baja" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BajaCategoria.aspx.cs" Inherits="Web.BajaCategoria" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -30,10 +30,10 @@
                 <td class="text-dark">
                     $ <% = decimal.Round(item.Precio, 2, MidpointRounding.AwayFromZero) %></td>
                 <td>
-                    <a href="Baja.aspx?idModificar=<% = item.Id.ToString() %>" class="btn btn-primary">
+                    <a href="BajaArticulo.aspx?idModificar=<% = item.Id.ToString() %>" class="btn btn-primary">
                         Modificar
                     </a>
-                    <a href="Baja.aspx?idBorrar=<% = item.Id %>" class="btn btn-danger">
+                    <a href="BajaArticulo.aspx?idBorrar=<% = item.Id %>" class="btn btn-danger">
                         Eliminar
                     </a>
                 </td>

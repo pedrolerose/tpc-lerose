@@ -106,8 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Alta.aspx" />
-    <Content Include="Baja.aspx" />
+    <Content Include="AltaCategoria.aspx" />
+    <Content Include="AltaMarca.aspx" />
+    <Content Include="AltaArticulo.aspx" />
+    <Content Include="BajaMarca.aspx" />
+    <Content Include="BajaCategoria.aspx" />
+    <Content Include="BajaArticulo.aspx" />
     <Content Include="CompraFinalizada.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -168,12 +172,26 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alta.aspx.cs">
-      <DependentUpon>Alta.aspx</DependentUpon>
+    <Compile Include="AltaCategoria.aspx.cs">
+      <DependentUpon>AltaCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alta.aspx.designer.cs">
-      <DependentUpon>Alta.aspx</DependentUpon>
+    <Compile Include="AltaCategoria.aspx.designer.cs">
+      <DependentUpon>AltaCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaMarca.aspx.cs">
+      <DependentUpon>AltaMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaMarca.aspx.designer.cs">
+      <DependentUpon>AltaMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaArticulo.aspx.cs">
+      <DependentUpon>AltaArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaArticulo.aspx.designer.cs">
+      <DependentUpon>AltaArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -184,12 +202,26 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Baja.aspx.cs">
-      <DependentUpon>Baja.aspx</DependentUpon>
+    <Compile Include="BajaMarca.aspx.cs">
+      <DependentUpon>BajaMarca.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Baja.aspx.designer.cs">
-      <DependentUpon>Baja.aspx</DependentUpon>
+    <Compile Include="BajaMarca.aspx.designer.cs">
+      <DependentUpon>BajaMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BajaCategoria.aspx.cs">
+      <DependentUpon>BajaCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaCategoria.aspx.designer.cs">
+      <DependentUpon>BajaCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BajaArticulo.aspx.cs">
+      <DependentUpon>BajaArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaArticulo.aspx.designer.cs">
+      <DependentUpon>BajaArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="CompraFinalizada.aspx.cs">
       <DependentUpon>CompraFinalizada.aspx</DependentUpon>
