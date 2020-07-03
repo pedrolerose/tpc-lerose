@@ -113,6 +113,8 @@
     <Content Include="BajaCategoria.aspx" />
     <Content Include="BajaArticulo.aspx" />
     <Content Include="CompraFinalizada.aspx" />
+    <Content Include="ConsultaUsuarios.aspx" />
+    <Content Include="ConsultaVentas.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -121,6 +123,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Detalle.aspx" />
+    <Content Include="DetalleUsuario.aspx" />
+    <Content Include="DetalleVenta.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -137,6 +141,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Listado.aspx" />
     <Content Include="MiCarrito.aspx" />
+    <Content Include="Registracion.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -230,6 +235,20 @@
     <Compile Include="CompraFinalizada.aspx.designer.cs">
       <DependentUpon>CompraFinalizada.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaUsuarios.aspx.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaUsuarios.aspx.designer.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVentas.aspx.cs">
+      <DependentUpon>ConsultaVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaVentas.aspx.designer.cs">
+      <DependentUpon>ConsultaVentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +269,20 @@
     </Compile>
     <Compile Include="Detalle.aspx.designer.cs">
       <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleUsuario.aspx.cs">
+      <DependentUpon>DetalleUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleUsuario.aspx.designer.cs">
+      <DependentUpon>DetalleUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleVenta.aspx.cs">
+      <DependentUpon>DetalleVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleVenta.aspx.designer.cs">
+      <DependentUpon>DetalleVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -283,6 +316,13 @@
       <DependentUpon>MiCarrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registracion.aspx.cs">
+      <DependentUpon>Registracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registracion.aspx.designer.cs">
+      <DependentUpon>Registracion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

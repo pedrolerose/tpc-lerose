@@ -20,19 +20,20 @@ namespace WebApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            miCarrito = carrito;
+            miCarrito = carrito.Articulos;
             total = 0;
             //lista auxiliar para no repetir items en el foreach
-            carritoFront = carrito.DistinctBy(i => i.Codigo).DistinctBy(i => i.Id).ToList();
+            carritoFront = carrito.Articulos.DistinctBy(i => i.Codigo).DistinctBy(i => i.Id).ToList();
             
             try
             {
 
                 //calculo total $$
-                foreach (var item in carrito)
+                foreach (var item in carrito.Articulos)
                 {
                     total += item.Precio;
                 }
+                carrito.Monto = total;
 
                 //quitar 1
                 var idQuitar = Request.QueryString["idQuitar"];
@@ -40,8 +41,8 @@ namespace WebApp
                 {
                     Articulo artQuitar = miCarrito.Find(a => a.Id == int.Parse(idQuitar));
                     miCarrito.Remove(artQuitar);
-                    carrito = miCarrito;
-                    Response.Redirect("~/MiCarrito.aspx");
+                    carrito.Articulos = miCarrito;
+                    Response.Redirect("~/MiCarrito.aspx", false);
                 }
 
                 //agregar 1
@@ -50,8 +51,8 @@ namespace WebApp
                 {
                     Articulo artAgregar = miCarrito.Find(a => a.Id == int.Parse(idAgregar));
                     miCarrito.Add(artAgregar);
-                    carrito = miCarrito;
-                    Response.Redirect("~/MiCarrito.aspx");
+                    carrito.Articulos = miCarrito;
+                    Response.Redirect("~/MiCarrito.aspx",false);
                 }
 
                 //borrar toda cantidad de articulo
@@ -59,15 +60,15 @@ namespace WebApp
                 if (idBorrar != null)
                 {
                     miCarrito.RemoveAll(a => a.Codigo == (idBorrar));
-                    carrito = miCarrito;
-                    Response.Redirect("~/MiCarrito.aspx");
+                    carrito.Articulos = miCarrito;
+                    Response.Redirect("~/MiCarrito.aspx", false);
                 }
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                Response.Redirect("~/Listado.aspx");
+                Response.Redirect("~/Error.aspx");
             }
         }
 
@@ -75,7 +76,7 @@ namespace WebApp
         public int ContarCant(Articulo art)
         {
             int c = 0;
-            foreach (var item in carrito)
+            foreach (var item in carrito.Articulos)
             {
                 if (item.Codigo == art.Codigo) c++;
             }
@@ -87,7 +88,8 @@ namespace WebApp
         {
             if (!IsPostBack) return;
             miCarrito.Clear();
-            carrito.Clear();
+            carrito.Articulos.Clear();
+            carrito.Monto = 0;
             carritoFront.Clear();
             Response.Redirect(Request.RawUrl);
         }

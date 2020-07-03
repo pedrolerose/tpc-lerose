@@ -38,7 +38,7 @@ namespace WebApp
             if (!IsPostBack) return;
 
             if(art != null)
-            carrito.Add(art);
+            carrito.Articulos.Add(art);
             Response.Redirect(Request.RawUrl);
         }
     }

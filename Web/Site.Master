@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-info rounded-circle" style="width: 39px;" title="Ver Carrito" href="MiCarrito.aspx"><% = Carrito.carrito.Count() %></a>
+                    <a class="nav-link btn btn-info rounded-circle" style="width: 39px;" title="Ver Carrito" href="MiCarrito.aspx"><% = Carrito.carrito.Articulos.Count() %></a>
                 </li>
             </ul>
 

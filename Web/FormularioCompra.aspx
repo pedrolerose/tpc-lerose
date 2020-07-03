@@ -14,16 +14,24 @@
                     <div class="row col-md-10 form-check" style="margin: 30px;">
 
                         <div class="row">
-                            <label class="form-check-label">Nombre:</label>
-                            <input class="form-control" type="text" name="name" value="" />
+                            <label class="form-check-label">Nombre y Apellido:</label>
+                            <asp:TextBox ID="nombre" CssClass="form-control btn-secondary" runat="server" />
                         </div>
                         <div class="row">
-                            <label class="form-check-label">Apellido:</label>
-                            <input class="form-control" type="text" name="name" value="" />
+                            <label class="form-check-label">Mail:</label>
+                            <asp:TextBox ID="mail" CssClass="form-control btn-secondary" runat="server" />
                         </div>
                         <div class="row">
-                            <label class="form-check-label">Dni:</label>
-                            <input class="form-control" type="text" name="name" value="" />
+                            <label class="form-check-label">Calle:</label>
+                            <asp:TextBox ID="calle" CssClass="form-control btn-secondary" runat="server" />
+                        </div>
+                        <div class="row">
+                            <label class="form-check-label">Provincia:</label>
+                            <asp:TextBox ID="provincia" CssClass="form-control btn-secondary" runat="server" />
+                        </div>
+                         <div class="row">
+                            <label class="form-check-label">Codigo Postal:</label>
+                            <asp:TextBox ID="postal" CssClass="form-control btn-secondary" runat="server" />
                         </div>
 
                     </div>
@@ -33,16 +41,24 @@
                     <div class="row col-md-10 form-check" style="margin: 30px;">
 
                         <div class="row">
-                            <label class="form-check-label">Direccion:</label>
-                            <input class="form-control" type="text" name="name" value="" />
-                        </div>
-                        <div class="row">
-                            <label class="form-check-label">Mail:</label>
-                            <input class="form-control" type="text" name="name" value="" />
+                            <label class="form-check-label">Nr. Documento:</label>
+                            <asp:TextBox ID="documento" CssClass="form-control btn-secondary" runat="server" />
                         </div>
                         <div class="row">
                             <label class="form-check-label">Telefono:</label>
-                            <input class="form-control" type="text" name="name" value="" />
+                            <asp:TextBox ID="telefono" CssClass="form-control btn-secondary" runat="server" />
+                        </div>
+                        <div class="row">
+                            <label class="form-check-label">Nr. Calle:</label>
+                            <asp:TextBox ID="numeroCalle" CssClass="form-control btn-secondary" runat="server" />
+                        </div>
+                        <div class="row">
+                            <label class="form-check-label">Localidad:</label>
+                            <asp:TextBox ID="localidad" CssClass="form-control btn-secondary" runat="server" />
+                        </div>
+                        <div class="row">
+                            <label class="form-check-label">Notas:</label>
+                            <asp:TextBox ID="notas" CssClass="form-control btn-secondary" runat="server" />
                         </div>
 
                     </div>

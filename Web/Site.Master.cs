@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Microsoft.Ajax.Utilities;
 using Negocio;
 
 namespace WebApp
@@ -13,11 +14,14 @@ namespace WebApp
     {
         public static class Carrito
         {
-            public static List<Articulo> carrito;
+            public static Dominio.Carrito carrito;
 
             static Carrito()
             {
-                carrito = new List<Articulo>();
+                carrito = new Dominio.Carrito();
+                carrito.Articulos = new List<Articulo>();
+                carrito.DatosEnvio = new DatosEnvio();
+                carrito.Monto = 0;
             }
         }
 

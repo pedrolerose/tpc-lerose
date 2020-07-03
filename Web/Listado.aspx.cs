@@ -45,7 +45,7 @@ namespace WebApp
                 if(Seleccionado != null)
                 {
                 Articulo articulo = listaArticulos.Find(a => a.Id == int.Parse(Seleccionado));
-                    carrito.Add(articulo);
+                    carrito.Articulos.Add(articulo);
                     Response.Redirect("~/Listado.aspx");
                 }
             }
