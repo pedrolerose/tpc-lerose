@@ -8,12 +8,12 @@ using Dominio;
 
 namespace Negocio
 {
-    public class CarritoNegocio
+    public class UsuarioNegocio
     {
-        public List<Carrito> Listar()
+        public List<Usuario> Listar()
         {
-            List<Carrito> lista = new List<Carrito>();
-            Carrito aux;
+            List<Usuario> lista = new List<Usuario>();
+            Usuario aux;
             SqlCommand comando = new SqlCommand();
             SqlConnection conexion = new SqlConnection();
             SqlDataReader lector;
@@ -21,7 +21,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT * FROM ConsultaVentas";
+                comando.CommandText = "SELECT * FROM ConsultaUsuarios";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -29,10 +29,13 @@ namespace Negocio
 
                 while (lector.Read())
                 {
-                    aux = new Carrito();
+                    aux = new Usuario();
                     aux.Id = lector.GetInt32(0);
                     aux.Fecha = (DateTime)lector["Fecha"];
-                    aux.Monto = (decimal)lector["Monto"];
+                    aux.Nombre = lector["Nombre"].ToString();
+                    aux.NumeroDocumento = (long)lector["NumeroDocumento"];
+                    aux.Mail = lector["Mail"].ToString();
+                    aux.SuperUsuario = (bool)lector["SuperUsuario"];
 
                     lista.Add(aux);
                 }
@@ -147,10 +150,10 @@ namespace Negocio
                 conexion.Close();
             }
         }
-        public List<Articulo> GetArticulosCarrito(int id)
+        public List<Carrito> GetComprasUsuario(int id)
         {
-            List<Articulo> articulos = new List<Articulo>(); ;
-            Articulo aux = new Articulo();
+            List<Carrito> carritos = new List<Carrito>(); ;
+            Carrito aux = new Carrito();
             SqlCommand comando = new SqlCommand();
             SqlConnection conexion = new SqlConnection();
             SqlDataReader lector;
@@ -158,7 +161,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "GetArticulosCarrito";
+                comando.CommandText = "GetComprasUsuario";
                 comando.Connection = conexion;
 
                 comando.Parameters.Clear();
@@ -170,14 +173,12 @@ namespace Negocio
                 while (lector.Read())
                 {
                     aux.Id = lector.GetInt32(0);
-                    aux.Codigo = lector["Codigo"].ToString();
-                    aux.Nombre = lector["Nombre"].ToString();
-                    aux.Imagen = lector["Imagen"].ToString();
-                    aux.Precio = (decimal)lector["Precio"];
+                    aux.Monto = (decimal)lector["Monto"];
+                    aux.Fecha = (DateTime)lector["Fecha"];
 
-                    articulos.Add(aux);
+                    carritos.Add(aux);
                 }
-                return articulos;
+                return carritos;
             }
             catch (Exception ex)
             {

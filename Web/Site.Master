@@ -36,6 +36,10 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="AltaCategoria.aspx">Alta Categoria</a>
                     <a class="dropdown-item" href="BajaCategoria.aspx">Baja/Modificacion Categoria</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="ConsultaVentas.aspx">Ventas</a>
+                    <a class="dropdown-item" href="ConsultaUsuarios.aspx">Usuarios</a>
                 </div>
             </li>
         </ul>
