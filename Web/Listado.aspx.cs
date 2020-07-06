@@ -48,6 +48,14 @@ namespace WebApp
                     carrito.Articulos.Add(articulo);
                     Response.Redirect("~/Listado.aspx");
                 }
+
+                var logout = Request.QueryString["logout"];
+                if (logout != null)
+                {
+                    Session.Add("usersession", null);
+                    Response.Redirect("~/Listado.aspx");
+                }
+
             }
             catch (Exception ex)
             {
@@ -55,13 +63,5 @@ namespace WebApp
                 Response.Redirect("~/Listado.aspx");
             }
         }
-        /*public void AgregarCarrito(Articulo art)
-        {
-            if (!IsPostBack) return;
-
-            if (art != null)
-                carrito.Add(art);
-            Response.Redirect(Request.RawUrl);
-        }*/
     }
 }

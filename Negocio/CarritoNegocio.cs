@@ -47,7 +47,7 @@ namespace Negocio
                 conexion.Close();
             }
         }
-        public void Agregar(Carrito carrito)
+        public void Agregar(Carrito carrito, FormaPago pago, Usuario user)
         {
             SqlCommand comando = new SqlCommand();
             SqlConnection conexion = new SqlConnection();
@@ -64,7 +64,7 @@ namespace Negocio
 
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@fecha", carrito.Fecha);
-                comando.Parameters.AddWithValue("@usuario", carrito.Usuario.Id);
+                comando.Parameters.AddWithValue("@usuario", user.Id); // el user ya tiene datos de envio
                 comando.Parameters.AddWithValue("@borrado", carrito.BorradoLogico);
                 comando.Parameters.AddWithValue("@monto", carrito.Monto);
 
@@ -89,33 +89,29 @@ namespace Negocio
                 }
                 conexion.Close();
 
-
-                // guardo datos envio 
+                
+                // guardo el pago
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "GuardarEnvio";
+                comando.CommandText = "GuardarPago";
                 comando.Connection = conexion;
 
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@calle", carrito.DatosEnvio.Calle);
-                comando.Parameters.AddWithValue("@postal", carrito.DatosEnvio.CodigoPostal);
-                comando.Parameters.AddWithValue("@localidad", carrito.DatosEnvio.Localidad);
-                comando.Parameters.AddWithValue("@mail", carrito.DatosEnvio.Mail);
-                comando.Parameters.AddWithValue("@nombre", carrito.DatosEnvio.Nombre);
-                comando.Parameters.AddWithValue("@notas", carrito.DatosEnvio.Notas);
-                comando.Parameters.AddWithValue("@nrCalle", carrito.DatosEnvio.NumeroCalle);
-                comando.Parameters.AddWithValue("@documento", carrito.DatosEnvio.NumeroDocumento);
-                comando.Parameters.AddWithValue("@provincia", carrito.DatosEnvio.Provincia);
-                comando.Parameters.AddWithValue("@telefono", carrito.DatosEnvio.Telefono);
-                comando.Parameters.AddWithValue("@fecha", carrito.Fecha);
-                comando.Parameters.AddWithValue("@usuario", carrito.Usuario.Id);
-                comando.Parameters.AddWithValue("@borrado", carrito.BorradoLogico);
+
+                comando.Parameters.AddWithValue("@numeroTarjeta", pago.NumeroTarjeta);
+                comando.Parameters.AddWithValue("@nombreTitular", pago.NombreTitular);
+                comando.Parameters.AddWithValue("@vencimientoDia", pago.VencimientoDia);
+                comando.Parameters.AddWithValue("@vencimientoMes", pago.VencimientoMes);
+                comando.Parameters.AddWithValue("@codigoSeguridad", pago.CodigoSeguridad);
+
+                comando.Parameters.AddWithValue("@fecha", pago.Fecha);
+                comando.Parameters.AddWithValue("@usuario", user.Id);
+                comando.Parameters.AddWithValue("@borrado", pago.BorradoLogico);
                 comando.Parameters.AddWithValue("@id", CarritoId);
 
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
-
 
 
                 // Ahora Guardo la lista de articulos
@@ -136,6 +132,7 @@ namespace Negocio
 
                     comando.ExecuteNonQuery();
                 }
+
 
             }
             catch (Exception ex)

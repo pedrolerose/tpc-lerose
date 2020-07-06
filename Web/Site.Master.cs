@@ -25,9 +25,25 @@ namespace WebApp
             }
         }
 
+        public Usuario user { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            try
+            {
+
+                user = (Usuario)Session["usersession"];
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
+
+
     }
 }

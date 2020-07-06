@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using static WebApp.SiteMaster;
 using static WebApp.SiteMaster.Carrito;
 using Negocio;
+using System.Text.RegularExpressions;
+using Dominio;
 
 namespace WebApp
 {
@@ -14,51 +16,39 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public void Finalizar()
-        {
-            if (!IsPostBack) return;
-
-            ModelarEnvio();
-
-            CarritoNegocio n = new CarritoNegocio();
-            n.Agregar(carrito);
-
-            carrito.Articulos.Clear();
-            carrito.Monto = 0;
-            carrito.DatosEnvio = new Dominio.DatosEnvio();
-            Response.Redirect("~/CompraFinalizada.aspx");
-            //aca estoy viendo como mandarme la info por mail
-        }
-
-        public void ModelarEnvio()
-        {
-            if (!IsPostBack) return;
-
             try
             {
 
-                carrito.DatosEnvio.Nombre = nombre.Text;
-                carrito.DatosEnvio.Mail = mail.Text;
-                carrito.DatosEnvio.Calle = calle.Text;
-                carrito.DatosEnvio.Provincia = provincia.Text;
-                carrito.DatosEnvio.CodigoPostal = Convert.ToInt64(postal.Text.Trim());
-                carrito.DatosEnvio.NumeroDocumento = Convert.ToInt64(documento.Text.Trim());
-                carrito.DatosEnvio.Telefono = Convert.ToInt64(telefono.Text.Trim());
-                carrito.DatosEnvio.NumeroCalle = Convert.ToInt64(numeroCalle.Text.Trim());
-                carrito.DatosEnvio.Localidad = localidad.Text;
-                carrito.DatosEnvio.Notas = notas.Text;
+                Usuario user = (Usuario)Session["usersession"];
 
+                if (user != null)
+                {
+                    carrito.Usuario.Nombre = user.Nombre;
+                    carrito.Usuario.Mail = user.Mail;
+                    carrito.Usuario.Calle = user.Calle;
+                    carrito.Usuario.Provincia = user.Provincia;
+                    carrito.Usuario.CodigoPostal = user.CodigoPostal;
+                    carrito.Usuario.NumeroDocumento = user.NumeroDocumento;
+                    carrito.Usuario.Telefono = user.Telefono;
+                    carrito.Usuario.NumeroCalle = user.NumeroCalle;
+                    carrito.Usuario.Localidad = user.Localidad;
 
+                    Response.Redirect("~/FormaPago.aspx", false);
+                }
+                else
+                {
+                    Response.Redirect("~/NoEsUsuario.aspx", false);
+                }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
             }
+
         }
+
+
     }
 }

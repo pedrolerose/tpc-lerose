@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApp
+namespace Web
 {
 
 
-    public partial class FormularioCompra
+    public partial class NoEsUsuario
     {
     }
 }

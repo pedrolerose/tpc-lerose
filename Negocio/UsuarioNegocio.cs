@@ -37,6 +37,13 @@ namespace Negocio
                     aux.Mail = lector["Mail"].ToString();
                     aux.SuperUsuario = (bool)lector["SuperUsuario"];
 
+                    aux.Calle = lector["Calle"].ToString();
+                    aux.NumeroCalle = (long)lector["NumeroCalle"];
+                    aux.Localidad = lector["Localidad"].ToString();
+                    aux.Provincia = lector["Provincia"].ToString();
+                    aux.CodigoPostal = (long)lector["CodigoPostal"];
+                    aux.Telefono = (long)lector["Telefono"];
+
                     lista.Add(aux);
                 }
                 return lista;
@@ -50,7 +57,7 @@ namespace Negocio
                 conexion.Close();
             }
         }
-        public void Agregar(Carrito carrito)
+        public bool Registrar(Usuario u)
         {
             SqlCommand comando = new SqlCommand();
             SqlConnection conexion = new SqlConnection();
@@ -59,91 +66,39 @@ namespace Negocio
             try
             {
 
-                // guardo primero carrito
                 conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "GuardarCarrito";
+                comando.CommandText = "Registrar";
                 comando.Connection = conexion;
 
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@fecha", carrito.Fecha);
-                comando.Parameters.AddWithValue("@usuario", carrito.Usuario.Id);
-                comando.Parameters.AddWithValue("@borrado", carrito.BorradoLogico);
-                comando.Parameters.AddWithValue("@monto", carrito.Monto);
+                comando.Parameters.AddWithValue("@fecha", u.Fecha);
+                comando.Parameters.AddWithValue("@borrado", u.BorradoLogico);
+                comando.Parameters.AddWithValue("@super", u.SuperUsuario);
+
+                comando.Parameters.AddWithValue("@calle", u.Calle);
+                comando.Parameters.AddWithValue("@postal", u.CodigoPostal);
+                comando.Parameters.AddWithValue("@localidad", u.Localidad);
+                comando.Parameters.AddWithValue("@mail", u.Mail);
+                comando.Parameters.AddWithValue("@nombre", u.Nombre);
+                comando.Parameters.AddWithValue("@nrCalle", u.NumeroCalle);
+                comando.Parameters.AddWithValue("@documento", u.NumeroDocumento);
+                comando.Parameters.AddWithValue("@provincia", u.Provincia);
+                comando.Parameters.AddWithValue("@telefono", u.Telefono);
+
+                comando.Parameters.AddWithValue("@clave", u.Clave);
+
 
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
 
-
-                // leo el id del carrito para vincular los articulos
-                SqlDataReader lector;
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT * FROM LeerCarritoId";
-                comando.Connection = conexion;
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-                var CarritoId = 0;
-                while (lector.Read())
-                {
-                    CarritoId = lector.GetInt32(0);
-                }
-                conexion.Close();
-
-
-                // guardo datos envio 
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "GuardarEnvio";
-                comando.Connection = conexion;
-
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@calle", carrito.DatosEnvio.Calle);
-                comando.Parameters.AddWithValue("@postal", carrito.DatosEnvio.CodigoPostal);
-                comando.Parameters.AddWithValue("@localidad", carrito.DatosEnvio.Localidad);
-                comando.Parameters.AddWithValue("@mail", carrito.DatosEnvio.Mail);
-                comando.Parameters.AddWithValue("@nombre", carrito.DatosEnvio.Nombre);
-                comando.Parameters.AddWithValue("@notas", carrito.DatosEnvio.Notas);
-                comando.Parameters.AddWithValue("@nrCalle", carrito.DatosEnvio.NumeroCalle);
-                comando.Parameters.AddWithValue("@documento", carrito.DatosEnvio.NumeroDocumento);
-                comando.Parameters.AddWithValue("@provincia", carrito.DatosEnvio.Provincia);
-                comando.Parameters.AddWithValue("@telefono", carrito.DatosEnvio.Telefono);
-                comando.Parameters.AddWithValue("@fecha", carrito.Fecha);
-                comando.Parameters.AddWithValue("@usuario", carrito.Usuario.Id);
-                comando.Parameters.AddWithValue("@borrado", carrito.BorradoLogico);
-                comando.Parameters.AddWithValue("@id", CarritoId);
-
-                conexion.Open();
-                comando.ExecuteNonQuery();
-                conexion.Close();
-
-
-
-                // Ahora Guardo la lista de articulos
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "GuardarListaArticulos";
-                comando.Connection = conexion;
-
-                conexion.Open();
-
-                foreach (var item in carrito.Articulos)
-                {
-                    comando.Parameters.Clear();
-
-                    comando.Parameters.AddWithValue("@articulo", item.Id);
-                    comando.Parameters.AddWithValue("@carrito", CarritoId);
-                    comando.Parameters.AddWithValue("@precio", item.Precio);
-
-                    comando.ExecuteNonQuery();
-                }
+                return true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                return false;
             }
             finally
             {
@@ -189,6 +144,51 @@ namespace Negocio
                 conexion.Close();
             }
         }
+        public Usuario Loguear(Usuario usuario)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+            SqlDataReader lector;
+            try
+            {
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Loguear";
+                comando.Connection = conexion;
+
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@mail", usuario.Mail);
+                comando.Parameters.AddWithValue("@clave", usuario.Clave);
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    usuario.Id = (int)lector["Id"];
+                    usuario.Fecha = (DateTime)lector["Fecha"];
+                    usuario.Nombre = lector["Nombre"].ToString();
+                    usuario.NumeroDocumento = (long)lector["NumeroDocumento"];
+                    usuario.SuperUsuario = (bool)lector["SuperUsuario"];
+
+                }
+
+                return usuario;
+
+            }
+            catch (Exception ex)
+            {
+                usuario.Id = 0;
+                return usuario;
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
     }
 }
 
