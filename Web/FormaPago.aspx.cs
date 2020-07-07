@@ -36,7 +36,9 @@ namespace Web
             n.Agregar(carrito, pago, user);
 
             // mando mail de compra
-
+            //MailNegocio mail = new MailNegocio();
+            //var mailParams = mail.ParametrizarEnvioMail(carrito);
+            //mail.EnvioMail(mailParams);
 
 
             //limpio el carrito y redirijo

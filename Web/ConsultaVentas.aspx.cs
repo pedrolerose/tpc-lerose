@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 using Negocio;
 
 namespace Web
@@ -17,6 +18,7 @@ namespace Web
 
             CarritoNegocio negocio = new CarritoNegocio();
             ventas = negocio.Listar();
+
 
         }
     }

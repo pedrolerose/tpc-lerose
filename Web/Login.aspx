@@ -19,17 +19,32 @@
             <div class="col">
                 <form id="form1" runat="server">
 
-                    <div>
-                        <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
-                        <h1 class="mb-3 text-dark">Login</h1>
-                        <div class="form-group">
-                            <asp:TextBox runat="server" ID="txtMail" CssClass="form-control" placeholder="Mail" required="" />
+                    <div class="row" style="margin-bottom: 50px; margin-top: 50px; justify-content: center">
+
+                        <div class="card col-md-4" style="width: 25%;">
+                            <div class="card-body" style="margin-left: 50px;">
+
+                                <div class="form-group">
+                                    <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
+                                    <h1 class="mb-3 text-dark">Login</h1>
+                                    <div class="form-group">
+                                        <asp:TextBox runat="server" ID="txtMail" CssClass="form-control" placeholder="Mail" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox runat="server" ID="txtPass" type="password" CssClass="form-control" placeholder="Password" required="" />
+                                    </div>
+                                    <button class="btn btn-lg btn-success" id="btnIngresar" onclick="<% Loguear(); %>">Ingresar</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <asp:TextBox runat="server" ID="txtPass" type="password" CssClass="form-control" placeholder="Password" required="" />
-                        </div>
-                        <button  class="btn btn-lg btn-success" id="btnIngresar" onclick="<% Loguear(); %>">Ingresar</button>
+
+
+
                     </div>
+
+
+
 
                 </form>
 

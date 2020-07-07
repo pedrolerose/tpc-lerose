@@ -18,11 +18,11 @@ namespace Negocio
 
 
             var __usuarioEnvioMail = "pedrolerose@gmail.com";
-            var __usuarioPasswordEnvioMail = "1234";
-            var __smtpClient = "smtp.gmail.com ";
-            var __usuario = "pedrolerose@gmailcom";
-            var __password = "1234";
-            var __puerto = "";
+            var __usuarioPasswordEnvioMail = "403096972613179p";
+            var __smtpClient = "smtp.gmail.com";
+            var __usuario = "Tape";
+            var __password = "";
+            var __puerto = "587";
             SmtpClient client = new SmtpClient(__smtpClient, int.Parse(__puerto));
             try
             {
@@ -33,16 +33,17 @@ namespace Negocio
                 msg.IsBodyHtml = mailParametros.conBodyHtml;
                 msg.From = new MailAddress(mailParametros.de);// new MailAddress("TuUsuarioRemitente@dominio.com");
                 msg.To.Add(mailParametros.para);
-                //client.EnableSsl = true;
-                client.Host = __smtpClient; /* ó Ip de tu equipo ()*/
-                msg.Priority = MailPriority.High;
-                NetworkCredential basicauthenticationinfo = new NetworkCredential(__usuario, __password, "Tape");
 
-                client.Port = int.Parse(__puerto);
+                client.EnableSsl = true;
+                //client.Host = __smtpClient; /* ó Ip de tu equipo ()*/
+               // msg.Priority = MailPriority.High;
+                NetworkCredential basicauthenticationinfo = new NetworkCredential(__usuarioEnvioMail, __usuarioPasswordEnvioMail);
+
+               /* client.Port = int.Parse(__puerto);
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = basicauthenticationinfo;
+                client.Credentials = basicauthenticationinfo;*/
 
 
                 client.Send(msg);

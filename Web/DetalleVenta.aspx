@@ -10,16 +10,30 @@
 
         <div class="card col-md-4" style="width: 25%;">
             <div class="card-body" style="margin-left: 50px;">
-                <div class="row">
-                    <p class="card-title">
-                        <label>Nr. Venta:</label>
-                        <label><% = carrito.Id %>&nbsp;&nbsp;</label>
-                        
-                    </p>
-                    <p class="card-text">
-                        <label>&nbsp;&nbsp;Monto: $</label>
-                        <label><% = carrito.Monto %></label>
-                    </p>
+                <div class="card-title">
+                    <label>Nr. Venta:</label>
+                    <label><% = carrito.Id %></label>
+                </div>
+                <div class="card-text">
+                    <label>Monto: $</label>
+                    <label><% = carrito.Monto %></label>
+                </div>
+                <div class="card-text">
+                    <label>Estado: </label>
+                    <label><% = carrito.EstadoVenta.Descripcion %></label>
+                </div>
+                <div class="card-text">
+                    <div class="btn-group dropright">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cambiar Estado
+                        </button>
+                        <div class="dropdown-menu">
+                            <% foreach (var e in estados)
+                                { %>
+                            <a href="DetalleVenta.aspx?idven=<% = carrito.Id.ToString() %>&idestado=<% = e.Id.ToString() %>" class="dropdown-item"><% = e.Descripcion %></a>
+                            <% } %>
+                        </div>
+                    </div>
                 </div>
             </div>
             <h6 class="text-dark" style="margin-left: 50px; margin-top: 20px;">Articulos</h6>

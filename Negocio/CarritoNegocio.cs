@@ -33,6 +33,8 @@ namespace Negocio
                     aux.Id = lector.GetInt32(0);
                     aux.Fecha = (DateTime)lector["Fecha"];
                     aux.Monto = (decimal)lector["Monto"];
+                    aux.EstadoVenta.Id = (int)lector["IdEstado"];
+                    aux.EstadoVenta.Descripcion = lector["Estado"].ToString();
 
                     lista.Add(aux);
                 }
@@ -67,6 +69,7 @@ namespace Negocio
                 comando.Parameters.AddWithValue("@usuario", user.Id); // el user ya tiene datos de envio
                 comando.Parameters.AddWithValue("@borrado", carrito.BorradoLogico);
                 comando.Parameters.AddWithValue("@monto", carrito.Monto);
+                comando.Parameters.AddWithValue("@estado", carrito.EstadoVenta.Id);
 
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -166,6 +169,7 @@ namespace Negocio
 
                 while (lector.Read())
                 {
+                    aux = new Articulo();
                     aux.Id = lector.GetInt32(0);
                     aux.Codigo = lector["Codigo"].ToString();
                     aux.Nombre = lector["Nombre"].ToString();

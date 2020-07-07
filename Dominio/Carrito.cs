@@ -8,5 +8,12 @@ namespace Dominio
         public virtual List<Articulo> Articulos { get; set; }
         public virtual decimal Monto { get; set; }
         public virtual DatosEnvio DatosEnvio { get; set; }
+        public virtual EstadoVenta EstadoVenta { get; set; }
+
+        public Carrito()
+        {
+            this.EstadoVenta = new EstadoVenta();
+        }
+
     }
 }
