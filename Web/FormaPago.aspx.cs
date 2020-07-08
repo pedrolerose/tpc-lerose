@@ -36,16 +36,16 @@ namespace Web
             n.Agregar(carrito, pago, user);
 
             // mando mail de compra
-            //MailNegocio mail = new MailNegocio();
-            //var mailParams = mail.ParametrizarEnvioMail(carrito);
-            //mail.EnvioMail(mailParams);
+            MailNegocio mail = new MailNegocio();
+            var mailParams = mail.ParametrizarEnvioMailCompra(carrito, user);
+            mail.EnvioMail(mailParams);
 
 
             //limpio el carrito y redirijo
             carrito.Articulos.Clear();
             carrito.Monto = 0;
             carrito.DatosEnvio = new Dominio.DatosEnvio();
-            Response.Redirect("~/CompraFinalizada.aspx");
+            Response.Redirect("~/CompraFinalizada.aspx", false);
         }
 
         public bool ValidarVacios()

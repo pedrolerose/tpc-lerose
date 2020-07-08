@@ -171,6 +171,11 @@ namespace Negocio
                     usuario.Nombre = lector["Nombre"].ToString();
                     usuario.NumeroDocumento = (long)lector["NumeroDocumento"];
                     usuario.SuperUsuario = (bool)lector["SuperUsuario"];
+                    usuario.Calle = lector["Calle"].ToString();
+                    usuario.NumeroCalle = (long)lector["NumeroCalle"];
+                    usuario.Provincia = lector["Provincia"].ToString();
+                    usuario.Localidad = lector["Localidad"].ToString();
+                    usuario.CodigoPostal = (long)lector["CodigoPostal"];
 
                 }
 
@@ -181,6 +186,38 @@ namespace Negocio
             {
                 usuario.Id = 0;
                 return usuario;
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public void CambioPass(long dni,string pass)
+        {
+            Usuario usuario = new Usuario();
+
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+            SqlDataReader lector;
+            try
+            {
+                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog=LEROSE_DB; integrated security=sspi;";
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "CambioPass";
+                comando.Connection = conexion;
+
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@dni", dni);
+                comando.Parameters.AddWithValue("@pass", pass);
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally

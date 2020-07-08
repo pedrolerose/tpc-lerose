@@ -65,7 +65,7 @@
 
         <% if (user == null)
             { %>
-            <ul class="navbar-nav" style="margin-right:30px;">
+        <ul class="navbar-nav" style="margin-right: 30px;">
 
             <li class="nav-item">
                 <a class="nav-link text-dark" href="Login.aspx">Iniciar Sesion</a>
@@ -73,26 +73,29 @@
             <li class="nav-item">
                 <a class="nav-link text-dark" href="Registracion.aspx">Registrarse</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="OlvidePass.aspx">Olvide mi Pass</a>
+            </li>
         </ul>
-        <% } else
+        <% }
+            else
             { %>
-            <ul class="navbar-nav" style="margin-right:30px;">
+        <ul class="navbar-nav" style="margin-right: 30px;">
 
             <li class="nav-item dropleft">
-                <a class="nav-link text-blue dropdown-toggle dropdown-toggle-split text-dark" title="Usuario" role="button" id="navbarDropdownUsuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <% = user.Nombre %></a>
-             <div class="dropdown-menu" aria-labelledby="navbarDropdownUsuario">
+                <a class="nav-link text-blue dropdown-toggle dropdown-toggle-split text-dark" title="Usuario" role="button" id="navbarDropdownUsuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><% = user.Nombre %></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownUsuario">
                     <a class="dropdown-item" href="DetalleUsuario.aspx?idusu=<% = user.Id.ToString() %>">Perfil / Compras</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="AltaMarca.aspx">Editar Perfil</a>
                     <div class="dropdown-divider"></div>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Listado.aspx?logout=true" >Cerrar Sesion</a>
+                    <a class="dropdown-item" href="Listado.aspx?logout=true">Cerrar Sesion</a>
                 </div>
             </li>
 
         </ul>
         <% } %>
-
     </nav>
 
     <form id="form1" runat="server">

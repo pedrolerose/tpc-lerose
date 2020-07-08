@@ -112,6 +112,7 @@
     <Content Include="BajaMarca.aspx" />
     <Content Include="BajaCategoria.aspx" />
     <Content Include="BajaArticulo.aspx" />
+    <Content Include="CambioPassCorrecto.aspx" />
     <Content Include="CompraFinalizada.aspx" />
     <Content Include="ConsultaUsuarios.aspx" />
     <Content Include="ConsultaVentas.aspx" />
@@ -125,6 +126,7 @@
     <Content Include="Detalle.aspx" />
     <Content Include="DetalleUsuario.aspx" />
     <Content Include="DetalleVenta.aspx" />
+    <Content Include="EnvioMailPass.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -144,6 +146,8 @@
     <Content Include="Login.aspx" />
     <Content Include="MiCarrito.aspx" />
     <Content Include="NoEsUsuario.aspx" />
+    <Content Include="CambioPass.aspx" />
+    <Content Include="OlvidePass.aspx" />
     <Content Include="Registracion.aspx" />
     <Content Include="RegistroError.aspx" />
     <Content Include="RegistroExitoso.aspx" />
@@ -233,6 +237,13 @@
     <Compile Include="BajaArticulo.aspx.designer.cs">
       <DependentUpon>BajaArticulo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CambioPassCorrecto.aspx.cs">
+      <DependentUpon>CambioPassCorrecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambioPassCorrecto.aspx.designer.cs">
+      <DependentUpon>CambioPassCorrecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CompraFinalizada.aspx.cs">
       <DependentUpon>CompraFinalizada.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,6 +300,13 @@
     <Compile Include="DetalleVenta.aspx.designer.cs">
       <DependentUpon>DetalleVenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EnvioMailPass.aspx.cs">
+      <DependentUpon>EnvioMailPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnvioMailPass.aspx.designer.cs">
+      <DependentUpon>EnvioMailPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -340,6 +358,20 @@
     </Compile>
     <Compile Include="NoEsUsuario.aspx.designer.cs">
       <DependentUpon>NoEsUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambioPass.aspx.cs">
+      <DependentUpon>CambioPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambioPass.aspx.designer.cs">
+      <DependentUpon>CambioPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OlvidePass.aspx.cs">
+      <DependentUpon>OlvidePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OlvidePass.aspx.designer.cs">
+      <DependentUpon>OlvidePass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registracion.aspx.cs">
